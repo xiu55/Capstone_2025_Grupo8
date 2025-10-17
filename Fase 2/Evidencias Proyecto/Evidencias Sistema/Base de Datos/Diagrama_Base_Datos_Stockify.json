@@ -1,0 +1,1082 @@
+{
+  "tables": [
+    {
+      "id": "2G7XK1Y5k2QcJoMP6Z6DD",
+      "name": "movimientos",
+      "comment": "Registro general de movimientos (metadatos).",
+      "color": "#02f032",
+      "fields": [
+        {
+          "id": "2xbwEmZ6NWZeFzdFIrgSD",
+          "name": "id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "9AU0X6K-ilRbY9TpYbd-k",
+          "name": "tipo",
+          "type": "VARCHAR(10)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "xKYff-SHjDRNlb6a2Z5Ve",
+          "name": "motivo",
+          "type": "VARCHAR(120)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "7idaTwk1yy5OGk0CVPdee",
+          "name": "referencia",
+          "type": "VARCHAR(120)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "QHF__wntarRneViNOO409",
+          "name": "usuario",
+          "type": "VARCHAR(100)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "F4M_oqa1sU2yCGLFega52",
+          "name": "creado_en",
+          "type": "DATETIME",
+          "default": "CURRENT_TIMESTAMP",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [
+        {
+          "id": 0,
+          "fields": [
+            "tipo"
+          ],
+          "name": "idx_movimientos_tipo",
+          "unique": false
+        },
+        {
+          "id": 1,
+          "fields": [
+            "creado_en"
+          ],
+          "name": "idx_movimientos_creado_en",
+          "unique": false
+        }
+      ],
+      "x": 92.86277357812503,
+      "y": 76.18258229687501
+    },
+    {
+      "id": "wydLQzk63MBkKz4TdolVy",
+      "name": "movimientos_inventario",
+      "comment": "Cabecera de movimientos de inventario.",
+      "color": "#a6eba2",
+      "fields": [
+        {
+          "id": "4aVKQtzOMDYiLlp-gzH_Q",
+          "name": "id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "4Y3VzIYMWV-ew-XQ0gkWl",
+          "name": "actualizado_en",
+          "type": "DATETIME(6)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "r6R3CWo3vhTvzCMDwcClP",
+          "name": "comentario",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "sHs9u5BfaWdYc_peg397c",
+          "name": "creado_en",
+          "type": "DATETIME(6)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "SuIIrb4W_TNB0zbo76hrs",
+          "name": "fecha",
+          "type": "DATETIME(6)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "lyVK2x9BnWa8SJbfrMtTb",
+          "name": "tipo",
+          "type": "MOVIMIENTOINVENTARIOTIPO",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "GjEgRQk4eI2ptmlFNkeLC",
+          "name": "referencia",
+          "type": "VARCHAR(128)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [
+        {
+          "id": 2,
+          "fields": [
+            "fecha"
+          ],
+          "name": "idx_mi_fecha",
+          "unique": false
+        },
+        {
+          "id": 3,
+          "fields": [
+            "tipo"
+          ],
+          "name": "idx_mi_tipo",
+          "unique": false
+        },
+        {
+          "id": 4,
+          "fields": [
+            "referencia"
+          ],
+          "name": "uk_mi_referencia",
+          "unique": true
+        }
+      ],
+      "x": 383.04535587500015,
+      "y": 73.50239101562502
+    },
+    {
+      "id": "DgJAHXw637JZoBq1YaCag",
+      "name": "movimiento_lineas",
+      "comment": "Detalle por producto de cada movimiento de inventario.",
+      "color": "#a6eba2",
+      "fields": [
+        {
+          "id": "HeCLroLKRJX_704sYxHDo",
+          "name": "id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "fqwYFiBbdsmsuARpBle3n",
+          "name": "movimiento_id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "1kcjGH3XiZeIWo3FWWzHv",
+          "name": "producto_id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "4RaR1CmWOF5GWvC38cr_s",
+          "name": "cantidad",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "RpUXHO89_kh0E3Ay7Dibj",
+          "name": "created_at",
+          "type": "DATETIME(6)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "42ZMAbnC2uOjANi4eyd0j",
+          "name": "updated_at",
+          "type": "DATETIME(6)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [
+        {
+          "id": 5,
+          "fields": [
+            "movimiento_id"
+          ],
+          "name": "idx_ml_movimiento",
+          "unique": false
+        },
+        {
+          "id": 6,
+          "fields": [
+            "producto_id"
+          ],
+          "name": "idx_ml_producto",
+          "unique": false
+        }
+      ],
+      "x": 738.8926245625003,
+      "y": 74.84248665625002
+    },
+    {
+      "id": "S1_ApycV5u_jHHwANcUsp",
+      "name": "presentaciones",
+      "comment": "Variantes de venta/unidad por producto.",
+      "color": "#fab907",
+      "fields": [
+        {
+          "id": "6nWaKIrj65Cz87c7tvlHK",
+          "name": "id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "9AuWnFaejxPNTLvoc_H1T",
+          "name": "producto_id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "qU45t6FimTBsWli4zaudI",
+          "name": "nombre_presentacion",
+          "type": "VARCHAR(120)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "DdGdYjoHd-WPIkCIEag9B",
+          "name": "tipo_presentacion",
+          "type": "PRESENTACIONTIPO",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "0sQBMWcQGXZF5-K5eUMbj",
+          "name": "factorabase",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "JPSxDe-b1hlXT48nE5lQ5",
+          "name": "sku",
+          "type": "VARCHAR(50)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "peIjMKoq_6jzn7i1KmKzp",
+          "name": "ean",
+          "type": "VARCHAR(50)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [
+        {
+          "id": 7,
+          "fields": [
+            "producto_id",
+            "nombre_presentacion"
+          ],
+          "name": "uk_presentacion_unica",
+          "unique": true
+        },
+        {
+          "id": 8,
+          "fields": [
+            "sku"
+          ],
+          "name": "uk_presentaciones_sku",
+          "unique": true
+        }
+      ],
+      "x": 382.42718415624995,
+      "y": 460.0250689531249
+    },
+    {
+      "id": "rO6W8yWXKtHdYYiISQ-3G",
+      "name": "productos",
+      "comment": "Catálogo maestro de productos.",
+      "color": "#f502e9",
+      "fields": [
+        {
+          "id": "eJuJtnjRU7hgXxX8iN7Mo",
+          "name": "id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "wyE6uV8HxsjRSa7fDyzdV",
+          "name": "codigo_barras",
+          "type": "VARCHAR(32)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "YAIMjcS5vN0nJ9VweEh7c",
+          "name": "nombre",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "mmlFP--sFftDIcWvdg5nl",
+          "name": "marca",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "sClojkj_92iPEz2BrOdmh",
+          "name": "precio",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "GiFFlxLVeFUAL9pZWAG5p",
+          "name": "categoria",
+          "type": "VARCHAR(32)",
+          "default": "'GENERAL'",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "8G5TufQQisxMn9TJosuyH",
+          "name": "unidad_base",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "LiPovxsZPOrO3lop5dQlv",
+          "name": "volumen_nominal_ml",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "k6oy-GgsJzOMDzLOas7hQ",
+          "name": "graduacion_alcoholica",
+          "type": "DOUBLE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "BjSpZOfDezXybWhcEhTDM",
+          "name": "perecible",
+          "type": "BOOLEAN",
+          "default": 0,
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "VStY-fMwwWTJ3xfeOqkwS",
+          "name": "retornable",
+          "type": "BOOLEAN",
+          "default": 0,
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "Tk3AlVo8-OmFA0FXzT8Yq",
+          "name": "stock_actual",
+          "type": "INT",
+          "default": 0,
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "vMKRZSGOCOo4KCR21pQcU",
+          "name": "stock_minimo",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "OMfzjGGV53MgMVXvagOpt",
+          "name": "activo",
+          "type": "BOOLEAN",
+          "default": 1,
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "5q_hCkq1hyUg9Zq4kU0oe",
+          "name": "creado_en",
+          "type": "DATETIME",
+          "default": "CURRENT_TIMESTAMP",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "Z_OAOAwTHY7XMDmYHa8YX",
+          "name": "actualizado_en",
+          "type": "DATETIME",
+          "default": "CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "NVGmfXt72IO8kyyzJShms",
+          "name": "version",
+          "type": "BIGINT",
+          "default": 0,
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "6V-JbgTNApp80rCGM-VIb",
+          "name": "fecha_vencimiento",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "y1H8LxeFnkO0B6iPowNbW",
+          "name": "imagen_url",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "xEq2QS38DSQmD2dchxlV_",
+          "name": "imagen_content_type",
+          "type": "VARCHAR(100)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "01XW3mdeTqMlNrAhLt7Xt",
+          "name": "imagen_nombre",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "GbvRRFQkZ0PPbLN3f1wor",
+          "name": "imagen_tamano",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "IbUfJyiFuuP_CFLLTg_iE",
+          "name": "imagen",
+          "type": "LONGBLOB",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [
+        {
+          "id": 9,
+          "fields": [
+            "codigo_barras"
+          ],
+          "name": "uk_productos_codigo_barras",
+          "unique": true
+        },
+        {
+          "id": 10,
+          "fields": [
+            "nombre"
+          ],
+          "name": "idx_productos_nombre",
+          "unique": false
+        }
+      ],
+      "x": 739.5107962812504,
+      "y": 460.02506895312507
+    },
+    {
+      "id": "3SE0lGKm7GI_G4lT11rrH",
+      "name": "usuarios",
+      "comment": "Usuarios del sistema y control de acceso básico.",
+      "color": "#f21616",
+      "fields": [
+        {
+          "id": "4cJwCoaVQm7R7YqU_9RNc",
+          "name": "rut",
+          "type": "VARCHAR(12)",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "Yy6CP3_znuo4WhZyRxBOQ",
+          "name": "username",
+          "type": "VARCHAR(64)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "vAlr6oZGiC4OVsBNXoL3D",
+          "name": "email",
+          "type": "VARCHAR(120)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "45PldXfl1fvRoEgNBVuXd",
+          "name": "telefono",
+          "type": "VARCHAR(32)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "4noFZ1V3iuY_qEp8Gd1Oc",
+          "name": "password_hash",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "dBJ4I_5HoPYy5ju_Ty6zE",
+          "name": "requiere_cambio_password",
+          "type": "BOOLEAN",
+          "default": 0,
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "c42E-kqauvKKnhu-f49FQ",
+          "name": "nombre",
+          "type": "VARCHAR(120)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "a_n_TwloBiDKvUolbU1jO",
+          "name": "profesion",
+          "type": "VARCHAR(120)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "vYKNA8L9xk3j0SE640G1L",
+          "name": "rol",
+          "type": "ROLUSUARIO",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "kjJU6c6s3s79xNlPyaUeg",
+          "name": "activo",
+          "type": "BOOLEAN",
+          "default": 1,
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "UG1ejsRdV9sIhgIxs9Ali",
+          "name": "intentos_fallidos",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "h3sO8fy57anVyHB5TsZxQ",
+          "name": "bloqueado_hasta",
+          "type": "DATETIME",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "FibN2x9DA56JwWmQZ4e04",
+          "name": "ultimo_acceso",
+          "type": "DATETIME",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "60fcLsgRI6X_YDZEPfWBo",
+          "name": "reset_token",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "7ppfKH5usSyQyEHnYUU2Y",
+          "name": "reset_expira",
+          "type": "DATETIME",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "618V1XI8rbDNBL93KDgYj",
+          "name": "password_actualizado_en",
+          "type": "DATETIME",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "-Bm_WA7iWe8vEPbChGMmY",
+          "name": "creado_en",
+          "type": "DATETIME",
+          "default": "CURRENT_TIMESTAMP",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ckjCn18Egls0oCnjWtzBe",
+          "name": "actualizado_en",
+          "type": "DATETIME",
+          "default": "CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "Rk75Aq1j4uwGaMYOZVlLw",
+          "name": "foto",
+          "type": "MEDIUMBLOB",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "b7I3L1Wi6nMF8eC_qlZAA",
+          "name": "foto_content_type",
+          "type": "VARCHAR(100)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "6yWS-bM6Zi7Q78_FkL9Gw",
+          "name": "foto_nombre",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "q90u38MdCu1Cym-_z3bjY",
+          "name": "foto_tamano",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [
+        {
+          "id": 11,
+          "fields": [
+            "username"
+          ],
+          "name": "uk_usuarios_username",
+          "unique": true
+        },
+        {
+          "id": 12,
+          "fields": [
+            "email"
+          ],
+          "name": "uk_usuarios_email",
+          "unique": true
+        },
+        {
+          "id": 13,
+          "fields": [
+            "rol",
+            "activo",
+            "nombre"
+          ],
+          "name": "idx_usuarios_rol_activo_nombre",
+          "unique": false
+        }
+      ],
+      "x": 94.20286921875004,
+      "y": 458.6849733125
+    }
+  ],
+  "relationships": [
+    {
+      "name": "fk_movimiento_lineas_movimiento_id_movimientos_inventario",
+      "startTableId": "DgJAHXw637JZoBq1YaCag",
+      "endTableId": "wydLQzk63MBkKz4TdolVy",
+      "endFieldId": "4aVKQtzOMDYiLlp-gzH_Q",
+      "startFieldId": "fqwYFiBbdsmsuARpBle3n",
+      "id": "qMlTbIQPn5sk32T9APi6J",
+      "updateConstraint": "Cascade",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": "fk_movimiento_lineas_producto_id_productos",
+      "startTableId": "DgJAHXw637JZoBq1YaCag",
+      "endTableId": "rO6W8yWXKtHdYYiISQ-3G",
+      "endFieldId": "eJuJtnjRU7hgXxX8iN7Mo",
+      "startFieldId": "1kcjGH3XiZeIWo3FWWzHv",
+      "id": "LCzzIE0tGOHeLCwK4cdSD",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": "fk_presentaciones_producto_id_productos",
+      "startTableId": "S1_ApycV5u_jHHwANcUsp",
+      "endTableId": "rO6W8yWXKtHdYYiISQ-3G",
+      "endFieldId": "eJuJtnjRU7hgXxX8iN7Mo",
+      "startFieldId": "9AuWnFaejxPNTLvoc_H1T",
+      "id": "uu5MTwFxpSpPGJloF2weR",
+      "updateConstraint": "Cascade",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    }
+  ],
+  "notes": [],
+  "subjectAreas": [],
+  "database": "mysql",
+  "title": "Untitled Diagram"
+}
