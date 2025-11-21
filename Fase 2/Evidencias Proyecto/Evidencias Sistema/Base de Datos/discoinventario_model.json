@@ -1,0 +1,2030 @@
+{
+  "tables": [
+    {
+      "id": "T_usuarios",
+      "name": "usuarios",
+      "comment": "Usuarios del sistema.",
+      "color": "#f21616",
+      "fields": [
+        {
+          "id": "u_rut",
+          "name": "rut",
+          "type": "VARCHAR(12)",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "u_username",
+          "name": "username",
+          "type": "VARCHAR(64)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "u_email",
+          "name": "email",
+          "type": "VARCHAR(120)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "u_telefono",
+          "name": "telefono",
+          "type": "VARCHAR(32)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "u_password_hash",
+          "name": "password_hash",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "u_requiere_cambio_password",
+          "name": "requiere_cambio_password",
+          "type": "BOOLEAN",
+          "default": 0,
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "u_nombre",
+          "name": "nombre",
+          "type": "VARCHAR(120)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "u_profesion",
+          "name": "profesion",
+          "type": "VARCHAR(120)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "u_rol",
+          "name": "rol",
+          "type": "ENUM",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "u_activo",
+          "name": "activo",
+          "type": "BOOLEAN",
+          "default": 1,
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "u_intentos_fallidos",
+          "name": "intentos_fallidos",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "u_bloqueado_hasta",
+          "name": "bloqueado_hasta",
+          "type": "DATETIME",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "u_ultimo_acceso",
+          "name": "ultimo_acceso",
+          "type": "DATETIME",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "u_reset_token",
+          "name": "reset_token",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "u_reset_expira",
+          "name": "reset_expira",
+          "type": "DATETIME",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "u_password_actualizado_en",
+          "name": "password_actualizado_en",
+          "type": "DATETIME",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "u_creado_en",
+          "name": "creado_en",
+          "type": "DATETIME",
+          "default": "CURRENT_TIMESTAMP",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "u_actualizado_en",
+          "name": "actualizado_en",
+          "type": "DATETIME",
+          "default": "CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "u_foto",
+          "name": "foto",
+          "type": "MEDIUMBLOB",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "u_foto_content_type",
+          "name": "foto_content_type",
+          "type": "VARCHAR(100)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "u_foto_nombre",
+          "name": "foto_nombre",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "u_foto_tamano",
+          "name": "foto_tamano",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [
+        {
+          "id": 0,
+          "fields": [
+            "username"
+          ],
+          "name": "uk_usuarios_username",
+          "unique": true
+        },
+        {
+          "id": 1,
+          "fields": [
+            "email"
+          ],
+          "name": "uk_usuarios_email",
+          "unique": true
+        },
+        {
+          "id": 2,
+          "fields": [
+            "rol",
+            "activo",
+            "nombre"
+          ],
+          "name": "idx_usuarios_rol_activo_nombre",
+          "unique": false
+        }
+      ],
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "T_proveedores",
+      "name": "proveedores",
+      "comment": "Proveedores.",
+      "color": "#5bc0de",
+      "fields": [
+        {
+          "id": "p_id",
+          "name": "id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "p_rut",
+          "name": "rut",
+          "type": "VARCHAR(12)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "p_razon_social",
+          "name": "razon_social",
+          "type": "VARCHAR(150)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "p_giro",
+          "name": "giro",
+          "type": "VARCHAR(120)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "p_direccion",
+          "name": "direccion",
+          "type": "VARCHAR(200)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "p_email",
+          "name": "email",
+          "type": "VARCHAR(120)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "p_telefono",
+          "name": "telefono",
+          "type": "VARCHAR(30)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "p_activo",
+          "name": "activo",
+          "type": "BOOLEAN",
+          "default": 1,
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "p_creado_en",
+          "name": "creado_en",
+          "type": "DATETIME",
+          "default": "CURRENT_TIMESTAMP",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "p_actualizado_en",
+          "name": "actualizado_en",
+          "type": "DATETIME",
+          "default": "CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [
+        {
+          "id": 3,
+          "fields": [
+            "rut"
+          ],
+          "name": "uk_proveedores_rut",
+          "unique": true
+        },
+        {
+          "id": 4,
+          "fields": [
+            "razon_social"
+          ],
+          "name": "idx_proveedor_razon",
+          "unique": false
+        },
+        {
+          "id": 5,
+          "fields": [
+            "activo"
+          ],
+          "name": "idx_proveedor_activo",
+          "unique": false
+        }
+      ],
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "T_productos",
+      "name": "productos",
+      "comment": "Catálogo maestro de productos.",
+      "color": "#f502e9",
+      "fields": [
+        {
+          "id": "pr_id",
+          "name": "id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "pr_codigo_barras",
+          "name": "codigo_barras",
+          "type": "VARCHAR(32)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_nombre",
+          "name": "nombre",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_marca",
+          "name": "marca",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_precio",
+          "name": "precio",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_precio_neto",
+          "name": "precio_neto",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_categoria",
+          "name": "categoria",
+          "type": "VARCHAR(32)",
+          "default": "'GENERAL'",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_unidad_base",
+          "name": "unidad_base",
+          "type": "ENUM",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_volumen_nominal_ml",
+          "name": "volumen_nominal_ml",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_graduacion_alcoholica",
+          "name": "graduacion_alcoholica",
+          "type": "DOUBLE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_perecible",
+          "name": "perecible",
+          "type": "BOOLEAN",
+          "default": 0,
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_retornable",
+          "name": "retornable",
+          "type": "BOOLEAN",
+          "default": 0,
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_stock_actual",
+          "name": "stock_actual",
+          "type": "INT",
+          "default": 0,
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_stock_minimo",
+          "name": "stock_minimo",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_activo",
+          "name": "activo",
+          "type": "BOOLEAN",
+          "default": 1,
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_creado_en",
+          "name": "creado_en",
+          "type": "DATETIME",
+          "default": "CURRENT_TIMESTAMP",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_actualizado_en",
+          "name": "actualizado_en",
+          "type": "DATETIME",
+          "default": "CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_version",
+          "name": "version",
+          "type": "BIGINT",
+          "default": 0,
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_fecha_vencimiento",
+          "name": "fecha_vencimiento",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_imagen_url",
+          "name": "imagen_url",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_imagen_content_type",
+          "name": "imagen_content_type",
+          "type": "VARCHAR(100)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_imagen_nombre",
+          "name": "imagen_nombre",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_imagen_tamano",
+          "name": "imagen_tamano",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_imagen",
+          "name": "imagen",
+          "type": "LONGBLOB",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_costo_neto",
+          "name": "costo_neto",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pr_proveedor_id",
+          "name": "proveedor_id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [
+        {
+          "id": 6,
+          "fields": [
+            "codigo_barras"
+          ],
+          "name": "uk_productos_codigo_barras",
+          "unique": true
+        },
+        {
+          "id": 7,
+          "fields": [
+            "nombre"
+          ],
+          "name": "idx_productos_nombre",
+          "unique": false
+        },
+        {
+          "id": 8,
+          "fields": [
+            "proveedor_id"
+          ],
+          "name": "idx_productos_proveedor",
+          "unique": false
+        }
+      ],
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "T_presentaciones",
+      "name": "presentaciones",
+      "comment": "Variantes de venta/unidad por producto.",
+      "color": "#fab907",
+      "fields": [
+        {
+          "id": "pre_id",
+          "name": "id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "pre_producto_id",
+          "name": "producto_id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pre_nombre_presentacion",
+          "name": "nombre_presentacion",
+          "type": "VARCHAR(120)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pre_tipo_presentacion",
+          "name": "tipo_presentacion",
+          "type": "ENUM",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pre_factorabase",
+          "name": "factorabase",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pre_sku",
+          "name": "sku",
+          "type": "VARCHAR(50)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "pre_ean",
+          "name": "ean",
+          "type": "VARCHAR(50)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [
+        {
+          "id": 9,
+          "fields": [
+            "producto_id",
+            "nombre_presentacion"
+          ],
+          "name": "uk_presentacion_unica",
+          "unique": true
+        },
+        {
+          "id": 10,
+          "fields": [
+            "sku"
+          ],
+          "name": "uk_presentaciones_sku",
+          "unique": true
+        }
+      ],
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "T_bitacoras",
+      "name": "bitacoras",
+      "comment": "Cabecera de bitácoras.",
+      "color": "#cccccc",
+      "fields": [
+        {
+          "id": "b_id",
+          "name": "id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "b_fecha",
+          "name": "fecha",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [
+        {
+          "id": 11,
+          "fields": [
+            "fecha"
+          ],
+          "name": "uk_bitacora_fecha",
+          "unique": true
+        }
+      ],
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "T_bitacora_detalles",
+      "name": "bitacora_detalles",
+      "comment": "Detalle de bitácoras por máquina.",
+      "color": "#cccccc",
+      "fields": [
+        {
+          "id": "bd_id",
+          "name": "id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "bd_maquina",
+          "name": "maquina",
+          "type": "VARCHAR(200)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "bd_payload_json",
+          "name": "payload_json",
+          "type": "LONGTEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "bd_bitacora_id",
+          "name": "bitacora_id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [
+        {
+          "id": 12,
+          "fields": [
+            "bitacora_id",
+            "maquina"
+          ],
+          "name": "uk_bitacora_maquina",
+          "unique": true
+        }
+      ],
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "T_ingreso",
+      "name": "ingreso",
+      "comment": "Cabecera de ingresos internos.",
+      "color": "#5bc0de",
+      "fields": [
+        {
+          "id": "ing_id",
+          "name": "id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "ing_tipo_doc",
+          "name": "tipo_doc",
+          "type": "ENUM",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ing_folio",
+          "name": "folio",
+          "type": "VARCHAR(20)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ing_proveedor_rut",
+          "name": "proveedor_rut",
+          "type": "VARCHAR(12)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ing_proveedor_nombre",
+          "name": "proveedor_nombre",
+          "type": "VARCHAR(200)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ing_fecha",
+          "name": "fecha",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ing_anio",
+          "name": "anio",
+          "type": "SMALLINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ing_moneda",
+          "name": "moneda",
+          "type": "VARCHAR(10)",
+          "default": "'CLP'",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ing_neto",
+          "name": "neto",
+          "type": "DECIMAL(14,2)",
+          "default": 0,
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ing_iva",
+          "name": "iva",
+          "type": "DECIMAL(14,2)",
+          "default": 0,
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ing_total",
+          "name": "total",
+          "type": "DECIMAL(14,2)",
+          "default": 0,
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ing_observaciones",
+          "name": "observaciones",
+          "type": "TEXT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ing_created_at",
+          "name": "created_at",
+          "type": "DATETIME",
+          "default": "CURRENT_TIMESTAMP",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ing_updated_at",
+          "name": "updated_at",
+          "type": "DATETIME",
+          "default": "CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [
+        {
+          "id": 13,
+          "fields": [
+            "tipo_doc",
+            "proveedor_rut",
+            "folio",
+            "anio"
+          ],
+          "name": "uq_ingreso_unico",
+          "unique": true
+        },
+        {
+          "id": 14,
+          "fields": [
+            "proveedor_rut"
+          ],
+          "name": "idx_ingreso_rut",
+          "unique": false
+        },
+        {
+          "id": 15,
+          "fields": [
+            "fecha"
+          ],
+          "name": "idx_ingreso_fecha",
+          "unique": false
+        }
+      ],
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "T_ingresos_compra",
+      "name": "ingresos_compra",
+      "comment": "Cabecera de ingresos provenientes de compras (SII u otro sistema).",
+      "color": "#5bc0de",
+      "fields": [
+        {
+          "id": "ic_id",
+          "name": "id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "ic_tipo_doc",
+          "name": "tipo_doc",
+          "type": "VARCHAR(16)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ic_folio",
+          "name": "folio",
+          "type": "VARCHAR(32)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ic_fecha_doc",
+          "name": "fecha_doc",
+          "type": "DATE",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ic_rut_proveedor",
+          "name": "rut_proveedor",
+          "type": "VARCHAR(20)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ic_razon_proveedor",
+          "name": "razon_proveedor",
+          "type": "VARCHAR(200)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ic_observaciones",
+          "name": "observaciones",
+          "type": "VARCHAR(500)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ic_estado",
+          "name": "estado",
+          "type": "VARCHAR(16)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ic_neto",
+          "name": "neto",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ic_iva",
+          "name": "iva",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ic_total",
+          "name": "total",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ic_creado_en",
+          "name": "creado_en",
+          "type": "DATETIME",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ic_actualizado_en",
+          "name": "actualizado_en",
+          "type": "DATETIME",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [
+        {
+          "id": 16,
+          "fields": [
+            "rut_proveedor",
+            "tipo_doc",
+            "folio",
+            "fecha_doc"
+          ],
+          "name": "uk_ingreso_doc",
+          "unique": true
+        }
+      ],
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "T_ingreso_item",
+      "name": "ingreso_item",
+      "comment": "Detalle de ítems por ingreso.",
+      "color": "#5bc0de",
+      "fields": [
+        {
+          "id": "ii_id",
+          "name": "id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "ii_ingreso_id",
+          "name": "ingreso_id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ii_codigo",
+          "name": "codigo",
+          "type": "VARCHAR(80)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ii_descripcion",
+          "name": "descripcion",
+          "type": "VARCHAR(300)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ii_uom",
+          "name": "uom",
+          "type": "VARCHAR(20)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ii_cantidad",
+          "name": "cantidad",
+          "type": "DECIMAL(14,3)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ii_costo_unit",
+          "name": "costo_unit",
+          "type": "DECIMAL(14,4)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ii_descuento",
+          "name": "descuento",
+          "type": "DECIMAL(14,2)",
+          "default": 0,
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ii_subtotal",
+          "name": "subtotal",
+          "type": "DECIMAL(14,2)",
+          "default": 0,
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [
+        {
+          "id": 17,
+          "fields": [
+            "ingreso_id"
+          ],
+          "name": "idx_item_ingreso",
+          "unique": false
+        }
+      ],
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "T_movimientos",
+      "name": "movimientos",
+      "comment": "Registro de movimientos, vincula usuarios con documentos de ingreso.",
+      "color": "#02f032",
+      "fields": [
+        {
+          "id": "m_id",
+          "name": "id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "m_tipo",
+          "name": "tipo",
+          "type": "VARCHAR(20)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "m_motivo",
+          "name": "motivo",
+          "type": "VARCHAR(120)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "m_referencia",
+          "name": "referencia",
+          "type": "VARCHAR(120)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "m_usuario_rut",
+          "name": "usuario_rut",
+          "type": "VARCHAR(12)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "m_ingreso_id",
+          "name": "ingreso_id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "m_ingreso_item_id",
+          "name": "ingreso_item_id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "m_ingreso_compra_id",
+          "name": "ingreso_compra_id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "m_creado_en",
+          "name": "creado_en",
+          "type": "DATETIME",
+          "default": "CURRENT_TIMESTAMP",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [
+        {
+          "id": 18,
+          "fields": [
+            "tipo"
+          ],
+          "name": "idx_movimientos_tipo",
+          "unique": false
+        },
+        {
+          "id": 19,
+          "fields": [
+            "creado_en"
+          ],
+          "name": "idx_movimientos_creado_en",
+          "unique": false
+        },
+        {
+          "id": 20,
+          "fields": [
+            "usuario_rut"
+          ],
+          "name": "idx_movimientos_usuario",
+          "unique": false
+        }
+      ],
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "T_movimientos_inventario",
+      "name": "movimientos_inventario",
+      "comment": "Cabecera de movimientos de inventario.",
+      "color": "#a6eba2",
+      "fields": [
+        {
+          "id": "mi_id",
+          "name": "id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "mi_actualizado_en",
+          "name": "actualizado_en",
+          "type": "DATETIME(6)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "mi_comentario",
+          "name": "comentario",
+          "type": "VARCHAR(255)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "mi_creado_en",
+          "name": "creado_en",
+          "type": "DATETIME(6)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "mi_fecha",
+          "name": "fecha",
+          "type": "DATETIME(6)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "mi_tipo",
+          "name": "tipo",
+          "type": "ENUM",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "mi_referencia",
+          "name": "referencia",
+          "type": "VARCHAR(128)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [
+        {
+          "id": 21,
+          "fields": [
+            "referencia"
+          ],
+          "name": "uk_mi_referencia",
+          "unique": true
+        },
+        {
+          "id": 22,
+          "fields": [
+            "fecha"
+          ],
+          "name": "idx_mi_fecha",
+          "unique": false
+        },
+        {
+          "id": 23,
+          "fields": [
+            "tipo"
+          ],
+          "name": "idx_mi_tipo",
+          "unique": false
+        }
+      ],
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "T_movimiento_lineas",
+      "name": "movimiento_lineas",
+      "comment": "Detalle de productos por movimiento de inventario.",
+      "color": "#a6eba2",
+      "fields": [
+        {
+          "id": "ml_id",
+          "name": "id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": true,
+          "unique": true,
+          "notNull": true,
+          "increment": true,
+          "comment": ""
+        },
+        {
+          "id": "ml_movimiento_id",
+          "name": "movimiento_id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ml_producto_id",
+          "name": "producto_id",
+          "type": "BIGINT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ml_cantidad",
+          "name": "cantidad",
+          "type": "INT",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": true,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ml_created_at",
+          "name": "created_at",
+          "type": "DATETIME(6)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        },
+        {
+          "id": "ml_updated_at",
+          "name": "updated_at",
+          "type": "DATETIME(6)",
+          "default": "",
+          "check": "",
+          "primary": false,
+          "unique": false,
+          "notNull": false,
+          "increment": false,
+          "comment": ""
+        }
+      ],
+      "indices": [
+        {
+          "id": 24,
+          "fields": [
+            "movimiento_id"
+          ],
+          "name": "idx_ml_movimiento",
+          "unique": false
+        },
+        {
+          "id": 25,
+          "fields": [
+            "producto_id"
+          ],
+          "name": "idx_ml_producto",
+          "unique": false
+        }
+      ],
+      "x": 0,
+      "y": 0
+    }
+  ],
+  "relationships": [
+    {
+      "name": "fk_bitacora_detalles_bitacora",
+      "startTableId": "T_bitacora_detalles",
+      "endTableId": "T_bitacoras",
+      "endFieldId": "b_id",
+      "startFieldId": "bd_bitacora_id",
+      "id": "R1",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": "fk_productos_proveedor",
+      "startTableId": "T_productos",
+      "endTableId": "T_proveedores",
+      "endFieldId": "p_id",
+      "startFieldId": "pr_proveedor_id",
+      "id": "R2",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": "fk_presentaciones_producto",
+      "startTableId": "T_presentaciones",
+      "endTableId": "T_productos",
+      "endFieldId": "pr_id",
+      "startFieldId": "pre_producto_id",
+      "id": "R3",
+      "updateConstraint": "No action",
+      "deleteConstraint": "Cascade",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": "fk_item_ingreso",
+      "startTableId": "T_ingreso_item",
+      "endTableId": "T_ingreso",
+      "endFieldId": "ing_id",
+      "startFieldId": "ii_ingreso_id",
+      "id": "R4",
+      "updateConstraint": "No action",
+      "deleteConstraint": "Cascade",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": "fk_movimientos_usuario",
+      "startTableId": "T_movimientos",
+      "endTableId": "T_usuarios",
+      "endFieldId": "u_rut",
+      "startFieldId": "m_usuario_rut",
+      "id": "R5",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": "fk_movimientos_ingreso",
+      "startTableId": "T_movimientos",
+      "endTableId": "T_ingreso",
+      "endFieldId": "ing_id",
+      "startFieldId": "m_ingreso_id",
+      "id": "R6",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": "fk_movimientos_ingreso_item",
+      "startTableId": "T_movimientos",
+      "endTableId": "T_ingreso_item",
+      "endFieldId": "ii_id",
+      "startFieldId": "m_ingreso_item_id",
+      "id": "R7",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": "fk_movimientos_ingreso_compra",
+      "startTableId": "T_movimientos",
+      "endTableId": "T_ingresos_compra",
+      "endFieldId": "ic_id",
+      "startFieldId": "m_ingreso_compra_id",
+      "id": "R8",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": "fk_ml_movimiento",
+      "startTableId": "T_movimiento_lineas",
+      "endTableId": "T_movimientos_inventario",
+      "endFieldId": "mi_id",
+      "startFieldId": "ml_movimiento_id",
+      "id": "R9",
+      "updateConstraint": "No action",
+      "deleteConstraint": "Cascade",
+      "cardinality": "many_to_one"
+    },
+    {
+      "name": "fk_ml_producto",
+      "startTableId": "T_movimiento_lineas",
+      "endTableId": "T_productos",
+      "endFieldId": "pr_id",
+      "startFieldId": "ml_producto_id",
+      "id": "R10",
+      "updateConstraint": "No action",
+      "deleteConstraint": "No action",
+      "cardinality": "many_to_one"
+    }
+  ],
+  "notes": [],
+  "subjectAreas": [],
+  "database": "mysql",
+  "title": "discoinventario"
+}

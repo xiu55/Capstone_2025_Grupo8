@@ -1,0 +1,176 @@
+erDiagram
+    bitacora_detalles }o--|| bitacoras : references
+    productos }o--|| proveedores : proveedor
+    presentaciones }o--|| productos : producto
+    ingreso_item }o--|| ingreso : pertenece_a
+    movimientos }o--|| usuarios : realizado_por
+    movimientos }o--o{ ingreso : sobre_cabecera_ingreso
+    movimientos }o--o{ ingreso_item : sobre_item_ingreso
+    movimientos }o--o{ ingresos_compra : sobre_compra
+    movimiento_lineas }o--|| movimientos_inventario : cabecera
+    movimiento_lineas }o--|| productos : producto
+
+    bitacoras {
+        BIGINT id
+        DATE fecha
+    }
+
+    bitacora_detalles {
+        BIGINT id
+        VARCHAR maquina
+        LONGTEXT payload_json
+        BIGINT bitacora_id
+    }
+
+    usuarios {
+        VARCHAR rut
+        VARCHAR username
+        VARCHAR email
+        VARCHAR telefono
+        VARCHAR password_hash
+        BOOLEAN requiere_cambio_password
+        VARCHAR nombre
+        VARCHAR profesion
+        ENUM rol
+        BOOLEAN activo
+        INT intentos_fallidos
+        DATETIME bloqueado_hasta
+        DATETIME ultimo_acceso
+        VARCHAR reset_token
+        DATETIME reset_expira
+        DATETIME password_actualizado_en
+        DATETIME creado_en
+        DATETIME actualizado_en
+        MEDIUMBLOB foto
+        VARCHAR foto_content_type
+        VARCHAR foto_nombre
+        BIGINT foto_tamano
+    }
+
+    proveedores {
+        BIGINT id
+        VARCHAR rut
+        VARCHAR razon_social
+        VARCHAR giro
+        VARCHAR direccion
+        VARCHAR email
+        VARCHAR telefono
+        BOOLEAN activo
+        DATETIME creado_en
+        DATETIME actualizado_en
+    }
+
+    productos {
+        BIGINT id
+        VARCHAR codigo_barras
+        VARCHAR nombre
+        VARCHAR marca
+        INT precio
+        INT precio_neto
+        VARCHAR categoria
+        ENUM unidad_base
+        INT volumen_nominal_ml
+        DOUBLE graduacion_alcoholica
+        BOOLEAN perecible
+        BOOLEAN retornable
+        INT stock_actual
+        INT stock_minimo
+        BOOLEAN activo
+        DATETIME creado_en
+        DATETIME actualizado_en
+        BIGINT version
+        DATE fecha_vencimiento
+        VARCHAR imagen_url
+        VARCHAR imagen_content_type
+        VARCHAR imagen_nombre
+        BIGINT imagen_tamano
+        LONGBLOB imagen
+        INT costo_neto
+        BIGINT proveedor_id
+    }
+
+    presentaciones {
+        BIGINT id
+        BIGINT producto_id
+        VARCHAR nombre_presentacion
+        ENUM tipo_presentacion
+        BIGINT factorabase
+        VARCHAR sku
+        VARCHAR ean
+    }
+
+    ingreso {
+        BIGINT id
+        ENUM tipo_doc
+        VARCHAR folio
+        VARCHAR proveedor_rut
+        VARCHAR proveedor_nombre
+        DATE fecha
+        SMALLINT anio
+        VARCHAR moneda
+        DECIMAL neto
+        DECIMAL iva
+        DECIMAL total
+        TEXT observaciones
+        DATETIME created_at
+        DATETIME updated_at
+    }
+
+    ingresos_compra {
+        BIGINT id
+        VARCHAR tipo_doc
+        VARCHAR folio
+        DATE fecha_doc
+        VARCHAR rut_proveedor
+        VARCHAR razon_proveedor
+        VARCHAR observaciones
+        VARCHAR estado
+        INT neto
+        INT iva
+        INT total
+        DATETIME creado_en
+        DATETIME actualizado_en
+    }
+
+    ingreso_item {
+        BIGINT id
+        BIGINT ingreso_id
+        VARCHAR codigo
+        VARCHAR descripcion
+        VARCHAR uom
+        DECIMAL cantidad
+        DECIMAL costo_unit
+        DECIMAL descuento
+        DECIMAL subtotal
+    }
+
+    movimientos {
+        BIGINT id
+        VARCHAR tipo
+        VARCHAR motivo
+        VARCHAR referencia
+        VARCHAR usuario_rut
+        BIGINT ingreso_id
+        BIGINT ingreso_item_id
+        BIGINT ingreso_compra_id
+        DATETIME creado_en
+    }
+
+    movimientos_inventario {
+        BIGINT id
+        DATETIME actualizado_en
+        VARCHAR comentario
+        DATETIME creado_en
+        DATETIME fecha
+        ENUM tipo
+        VARCHAR referencia
+    }
+
+    movimiento_lineas {
+        BIGINT id
+        BIGINT movimiento_id
+        BIGINT producto_id
+        INT cantidad
+        DATETIME created_at
+        DATETIME updated_at
+    }
